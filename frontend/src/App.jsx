@@ -3,6 +3,7 @@ import { SignedIn, SignedOut, RedirectToSignIn } from "@clerk/clerk-react";
 
 import Dashboard from "./pages/Dashboard";
 import BoardView from "./components/board/BoardView";
+import Profile from "./pages/Profile";
 
 export default function App() {
   return (
@@ -27,6 +28,20 @@ export default function App() {
           <>
             <SignedIn>
               <BoardView />
+            </SignedIn>
+            <SignedOut>
+              <RedirectToSignIn />
+            </SignedOut>
+          </>
+        }
+      />
+
+      <Route
+        path="/profile"
+        element={
+          <>
+            <SignedIn>
+              <Profile />
             </SignedIn>
             <SignedOut>
               <RedirectToSignIn />
