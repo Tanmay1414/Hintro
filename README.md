@@ -1,159 +1,84 @@
-🚀 Hintro – Real-Time Collaborative Task Platform
+<div align="center">
+	<h1>🚀 Hintro</h1>
+	<p><b>Real-Time Collaborative Task Platform</b></p>
+	<p>
+		<a href="https://github.com/Tanmay1414/Hintro"><img src="https://img.shields.io/github/stars/Tanmay1414/Hintro?style=social" alt="GitHub stars"></a>
+		<a href="https://github.com/Tanmay1414/Hintro"><img src="https://img.shields.io/github/forks/Tanmay1414/Hintro?style=social" alt="GitHub forks"></a>
+		<a href="https://github.com/Tanmay1414/Hintro/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Tanmay1414/Hintro" alt="License"></a>
+	</p>
+</div>
 
-Hintro is a full-stack real-time task management platform inspired by Trello and Notion.
-It enables users to create boards, manage lists and tasks with drag-and-drop functionality, and collaborate in real time using WebSockets.
+> Hintro is a full-stack real-time task management platform inspired by Trello and Notion. It enables users to create boards, manage lists and tasks with drag-and-drop functionality, and collaborate in real time using WebSockets.
 
-The application demonstrates scalable architecture, clean UI design, and seamless frontend-backend integration.
+---
 
-🌟 Live Features
-🔐 Authentication
+## ✨ Features
 
-Secure authentication using Clerk
+- **Authentication**: Secure Clerk-based auth, modal sign in/up, protected routes
+- **Boards, Lists & Tasks**: Create boards, manage lists, CRUD tasks, drag-and-drop ordering
+- **Real-Time Updates**: Live sync via Socket.io, board room-based WebSocket architecture
+- **Drag & Drop**: Move/reorder tasks with @hello-pangea/dnd, backend order persistence
+- **Activity Log**: Real-time activity tracking, clear activity option
+- **Modern UI/UX**: Glassmorphism-inspired, Tailwind CSS, animated backgrounds, custom covers, responsive
 
-Modal-based Sign In / Sign Up
+---
 
-Protected routes
+## 🛠 Tech Stack
 
-Session management
+**Frontend:**
 
-📋 Boards, Lists & Tasks
+- React (Vite)
+- Tailwind CSS
+- Clerk Authentication
+- Zustand (State Management)
+- Socket.io Client
+- @hello-pangea/dnd
+- React Router DOM
 
-Create multiple boards
+**Backend:**
 
-Create and manage lists within boards
+- Node.js
+- Express.js
+- MongoDB & Mongoose
+- Socket.io
+- RESTful APIs
 
-Create, update, delete tasks
+---
 
-Task ordering support
+## 🏗 Architecture Overview
 
-🔄 Real-Time Updates
+**Frontend:**
 
-Powered by Socket.io
+- Modular component-based structure
+- Clerk Provider for global auth
+- Drag & drop state sync with backend
+- Axios-based API service
+- Real-time socket connection per board
 
-Live task creation, updates & deletion
+**Backend:**
 
-Board room-based WebSocket architecture
+- REST API for CRUD
+- MongoDB schema-based models
+- Socket.io for real-time sync
+- Board-based room joining for scoped updates
 
-🎯 Drag & Drop
+---
 
-Implemented using @hello-pangea/dnd
+## 🗄 Database Schema Overview
 
-Reorder tasks within lists
+**Board**: `title`, `coverImage`, `coverColor`, `createdBy`
 
-Move tasks across lists
+**List**: `title`, `boardId`
 
-Backend order persistence
+**Task**: `title`, `description`, `listId`, `boardId`, `order`
 
-📊 Activity Log
+**Activity**: `message`, `boardId`, `createdAt`
 
-Real-time activity tracking per board
+---
 
-Clear activity option with confirmation modal
+## 📂 Project Structure
 
-🎨 UI/UX Enhancements
-
-Modern glassmorphism-inspired UI
-
-Tailwind CSS styling
-
-Animated gradient background
-
-Custom board covers (colors & images)
-
-Responsive layout
-
-🛠 Tech Stack
-Frontend
-
-React (Vite)
-
-Tailwind CSS
-
-Clerk Authentication
-
-Zustand (State Management)
-
-Socket.io Client
-
-@hello-pangea/dnd
-
-React Router DOM
-
-Backend
-
-Node.js
-
-Express.js
-
-MongoDB
-
-Mongoose
-
-Socket.io
-
-RESTful APIs
-
-🏗 Architecture Overview
-🔹 Frontend Architecture
-
-Component-based modular structure
-
-Global auth handled via Clerk Provider
-
-Drag & drop state synchronized with backend
-
-Axios-based API service layer
-
-Real-time socket connection per board room
-
-🔹 Backend Architecture
-
-REST API for CRUD operations
-
-MongoDB schema-based data modeling
-
-Socket.io server for real-time sync
-
-Board-based room joining for scoped updates
-
-🗄 Database Schema Overview
-Board
-
-title
-
-coverImage
-
-coverColor
-
-createdBy
-
-List
-
-title
-
-boardId
-
-Task
-
-title
-
-description
-
-listId
-
-boardId
-
-order
-
-Activity
-
-message
-
-boardId
-
-createdAt
-
-📂 Project Structure
+```
 Hintro/
 ├── backend/
 │   ├── models/
@@ -167,54 +92,64 @@ Hintro/
 │   ├── store/
 │   ├── services/
 │   └── socket/
+```
 
-⚙️ Setup Instructions
-1️⃣ Clone Repository
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/Tanmay1414/Hintro.git
 cd Hintro
+```
 
-2️⃣ Backend Setup
+### 2️⃣ Backend Setup
+
+```bash
 cd backend
 npm install
 npm run dev
+```
 
+Configure your MongoDB connection string and environment variables in `.env`.
 
-Make sure to configure:
+### 3️⃣ Frontend Setup
 
-MongoDB connection string
-
-Environment variables
-
-3️⃣ Frontend Setup
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
+Add a `.env` file inside `frontend/`:
 
-Add .env file inside frontend:
-
+```
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_key_here
+```
 
-🔐 Demo Credentials (If Required)
+---
 
-You may create a new user using Clerk Sign Up.
+## 🔐 Demo Credentials
 
-📈 Key Implementation Highlights
+Sign up with Clerk or use your own credentials.
 
-Real-time synchronization using WebSockets
+---
 
-Optimistic UI updates
+## 📈 Key Implementation Highlights
 
-Drag-and-drop with backend persistence
+- Real-time sync with WebSockets
+- Optimistic UI updates
+- Drag-and-drop with backend persistence
+- Modular, scalable project structure
+- Clean, modern, responsive UI
+- Route protection & authentication
 
-Modular scalable project structure
+---
 
-Clean modern UI with responsive design
+## 👨‍💻 Author
 
-Proper route protection & authentication flow
-
-👨‍💻 Author
-
-Tanmay Bansal
-Full Stack Developer | MERN Stack | Real-Time Systems
-GitHub: https://github.com/Tanmay1414
+**Tanmay Bansal**  
+Full Stack Developer | MERN Stack | Real-Time Systems  
+[GitHub: Tanmay1414](https://github.com/Tanmay1414)
