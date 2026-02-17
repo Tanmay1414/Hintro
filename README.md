@@ -51,10 +51,13 @@ Hintro/
 cd backend
 npm install
 npm run dev
-Frontend
+
+### Frontend
+```bash
 cd frontend
 npm install
 npm run dev
+
 👨‍💻 Author
 Tanmay Bansal
 Full Stack Developer | MERN | Real-Time Systems
